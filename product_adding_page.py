@@ -16,6 +16,7 @@ class AddingProducts(BasePage):
         # time.sleep(10)
         #
         # self.driver.find_element(*ProductAddingLocators.evening_dress_BTN).click()  #tutaj odwołuje sie do nazwy klasy  zktó©ej jest mój lokator i po kropce podaję nazwę lokatora
+        WebDriverWait(self.driver, 120).until(expected_conditions.element_to_be_clickable((ProductAddingLocators.dresses_BTN)))
         self.driver.find_element(*ProductAddingLocators.dresses_BTN).click()
 
     def click_evening_dresses(self):
