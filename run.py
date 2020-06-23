@@ -2,6 +2,8 @@ import unittest
 from tests.shopping_test import ShoppingTest
 
 
+
+
 # Pobierz testy, które chcesz uruchomić
 shopping_test = unittest.TestLoader().loadTestsFromTestCase(ShoppingTest)
 

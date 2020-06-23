@@ -1,6 +1,8 @@
 from tests.base_test import BaseTest
 from pages.product_adding_page import AddingProducts
+import logging
 import unittest
+
 
 class ShoppingTest(BaseTest):
     def testCorrectProductAdding(self):
@@ -18,24 +20,18 @@ class ShoppingTest(BaseTest):
         ad.click_on_moore()
         print('wybieram rozmiar')
         ad.choose_size()
-        print("klikam 'add to card'")
-        ad.add_to_basket()
-        print("klikam przycisk 'continue shopping'")
-        ad.click_back_btn()
-
+        print("asercja dla ceny i ilości sukienen wieczorowych")
+        ad.assertion_evening_dress_price_and_amount()
 
 
         print("klikam w przycisk 't-shirt'")
-        ad.click_tShirt()
+        ad.click_tshirt()
         print("klikam w t-shirt")
         ad.choose_short_sleeve()
         print('zwiększam liczbę produktów')
         ad.click_plus()
-        print("klikam 'add to card'")
-        ad.add_to_basket2()
-        print("klikam przycisk 'continue shopping'")
-        ad.click_back_btn2()
-
+        print("asercja dla ceny i ilości t-shirtów")
+        ad.tShirt_price()
 
 
         print('klikam w zakłądkę "women"')
@@ -45,11 +41,22 @@ class ShoppingTest(BaseTest):
         print('wybieram kolor pomarańczowy')
         ad.choose_orange()
         print('wuybieram rozmiar S')
-        ad.choose_size_S()
-        print('klikam "add to basket"')
-        ad.add_to_basket3()
-        print('klikam "checkout"')
-        ad.click_checkout()
+        ad.choose_size_s()
+        print("asercja dla ceny,ilości i koloru sukienki letniej")
+        ad.summerDressPrice()
+
+
+    logging.basicConfig(filename="//home/tester/Dokumenty/Ania/project-poprawa-asercji//test.log",
+                        format='%(asctime)s: %(levelname)s: %(message)s',
+                        datefmt='%Y/%m/%d %I:%M:%S %p')
+    logger = logging.getLogger()
+    logger.setLevel(logging.DEBUG)
+
+    logger.debug("This is debug message")
+    logger.info("This is info message")
+    logger.warning("This is warning message")
+    logger.error("This is error message")
+    logger.critical("This is critical message")
 
 
 
